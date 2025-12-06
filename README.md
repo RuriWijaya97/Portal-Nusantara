@@ -1,4 +1,5 @@
-⚔️ Portal Nusantara
+<h1>⚔️ Portal Nusantara</h1>
+
 Hack and Slash Roguelite Game with Indonesian Cultural Narrative
 
 📖 Overview
