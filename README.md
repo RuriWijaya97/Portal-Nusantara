@@ -10,5 +10,6 @@ Portal Nusantara is a hack and slash roguelite game offering a fast-paced, addic
 - Platform: PC
 
 <h1>🛠️ Technology Stack</h1>
-- Game Engine: Unity (2022.3.62f3)
+
+- Game Engine: Unity (2022.3.62f3)<br>
 - Programming Language: C#
