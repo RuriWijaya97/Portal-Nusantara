@@ -24,5 +24,4 @@ public class PlayerMovement : MonoBehaviour
         moveDirection = new Vector3(input.x, 0, input.y);
         characterController.Move(moveDirection * moveSpeed * Time.deltaTime);
     }
-    //If You Read This Then Youre A Nerd
 }
