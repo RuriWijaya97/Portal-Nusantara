@@ -18,6 +18,7 @@
   <Project Path="UnityEditor.TestRunner.csproj" />
   <Project Path="Unity.ProBuilder.Poly2Tri.csproj" />
   <Project Path="Unity.Polybrush.csproj" />
+  <Project Path="Unity.TextMeshPro.Editor.csproj" />
   <Project Path="Unity.VisualScripting.Flow.Editor.csproj" />
   <Project Path="UnityEngine.TestRunner.csproj" />
   <Project Path="Unity.VisualScripting.Core.csproj" />
@@ -47,6 +48,7 @@
   <Project Path="Unity.Services.Core.csproj" />
   <Project Path="Unity.VisualScripting.State.csproj" />
   <Project Path="Unity.Formats.Fbx.Runtime.csproj" />
+  <Project Path="Unity.TextMeshPro.csproj" />
   <Project Path="Unity.2D.Tilemap.Extras.Editor.csproj" />
   <Project Path="Unity.2D.Animation.Runtime.csproj" />
   <Project Path="Unity.VisualScripting.SettingsProvider.Editor.csproj" />
@@ -70,6 +72,7 @@
   <Project Path="Unity.ProBuilder.KdTree.csproj" />
   <Project Path="Unity.ProBuilder.AddOns.Editor.csproj" />
   <Project Path="Unity.Services.Core.Environments.Internal.csproj" />
+  <Project Path="Assembly-CSharp.csproj" />
   <Project Path="Unity.InputSystem.ForUI.csproj" />
   <Project Path="Unity.Services.Core.Networking.csproj" />
   <Project Path="Unity.Services.Core.Scheduler.csproj" />
