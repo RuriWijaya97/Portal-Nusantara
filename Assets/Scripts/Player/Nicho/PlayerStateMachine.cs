@@ -1,18 +1,28 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerStateMachine : MonoBehaviour
+public class PlayerStateMachine
 {
-    // Start is called before the first frame update
-    void Start()
+    // state saat ini
+    public PlayerState currentState{get; private set;}
+
+    // inisialisasi statenya
+    public void Initialize(PlayerState startingState)
     {
-        
+        currentState = startingState;
+        startingState.Enter();
     }
 
-    // Update is called once per frame
-    void Update()
+    // buat ngubah statenya
+    public void ChangeState(PlayerState newState)
     {
-        
+        currentState.Exit();
+        currentState = newState;
+        newState.Enter();
+    }
+
+    // buat ngejalanin logic nya
+    public void Update()
+    {
+        currentState.LogicUpdate();
     }
 }

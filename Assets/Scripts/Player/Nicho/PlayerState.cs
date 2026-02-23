@@ -1,18 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class PlayerState : MonoBehaviour
+public abstract class PlayerState
 {
-    // Start is called before the first frame update
-    void Start()
+    // reference ke player controllernya
+    protected PlayerMovement playerMovement;
+
+    // reference ke player state machinenya
+    protected PlayerStateMachine playerStateMachine;
+
+    // constructornya
+    public PlayerState(PlayerMovement playerMovement, PlayerStateMachine stateMachine)
     {
-        
+        this.playerMovement = playerMovement;
+        this.playerStateMachine = stateMachine;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    // blueprint methodnya
+    public virtual void Enter(){}
+    public virtual void LogicUpdate(){}
+    public virtual void Exit(){}
 }
