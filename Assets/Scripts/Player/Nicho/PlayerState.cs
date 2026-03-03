@@ -1,15 +1,16 @@
 public abstract class PlayerState
 {
-    // reference ke player controllernya
-    protected PlayerMovement playerMovement;
 
     // reference ke player state machinenya
     protected PlayerStateMachine playerStateMachine;
 
+    // reference ke playercontrollernya
+    protected PlayerController playerController;
+
     // constructornya
-    public PlayerState(PlayerMovement playerMovement, PlayerStateMachine stateMachine)
+    public PlayerState(PlayerController playerController, PlayerStateMachine stateMachine)
     {
-        this.playerMovement = playerMovement;
+        this.playerController = playerController;
         this.playerStateMachine = stateMachine;
     }
 
