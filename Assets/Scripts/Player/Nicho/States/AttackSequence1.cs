@@ -10,6 +10,10 @@ public class AttackSequence1 : PlayerState
     // wait time untuk ke attacksequence2
     private float comboWaitTime = 0.4f;
 
+    // seberapa jauh dia ngedash
+    private float dashDistance = 1.2f;
+    private float dashDuration = 0.15f;
+
     // contructornya
     public AttackSequence1(PlayerController playerController, PlayerStateMachine playerStateMachine, InputActionReference attackAction) : base(playerController, playerStateMachine)
     {
@@ -25,8 +29,12 @@ public class AttackSequence1 : PlayerState
 
     private IEnumerator ComboCoroutine()
     {
+        // start sedikit dash nya
+        playerController.StartCoroutine(playerController.MiniDashAttack(dashDistance, dashDuration));
+
         // buang 1 frame dari idle biar nggak kedetect masih di pressed
         yield return null;
+
         // apakah ke sequence berikutnya
         bool isQueued = false;
         float timer = comboWaitTime; // set timernya dulu
@@ -50,7 +58,7 @@ public class AttackSequence1 : PlayerState
 
     public override void LogicUpdate()
     {
-        
+
     }
 
     public override void Exit()

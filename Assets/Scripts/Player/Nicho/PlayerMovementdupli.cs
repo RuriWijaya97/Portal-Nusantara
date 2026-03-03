@@ -5,6 +5,15 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovementdupli : MonoBehaviour
 {
+    // bisa gerak apa nggak
+    private bool canMove = true;
+
+    public bool CanMove
+    {
+        get { return canMove; }
+        set { canMove = value; }
+    }
+
     public float moveSpeed = 5f;
 
     [SerializeField] private InputActionReference moveAction;
@@ -18,6 +27,9 @@ public class PlayerMovementdupli : MonoBehaviour
 
     private void Update()
     {
+        // kalau nggak bisa gerak maka skip
+        if (!canMove) return;
+
         if (characterController == null) return;
         Vector2 input = moveAction.action.ReadValue<Vector2>();
 
