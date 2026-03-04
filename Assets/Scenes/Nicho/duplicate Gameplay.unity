@@ -1810,6 +1810,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMovement: {fileID: 1901679566}
   attackAction: {fileID: 273737288}
+  dashAction: {fileID: 2108562514}
   debugComboAttack: {fileID: 1832723871}
 --- !u!1 &1943703166
 GameObject:
@@ -1964,6 +1965,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2013105617}
   m_CullTransparentMesh: 1
+--- !u!114 &2108562514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc1515ab76e54f068e2f2207940fab32, type: 3}
+  m_Name: Gameplay/Dash
+  m_EditorClassIdentifier: 
+  m_Asset: {fileID: -944628639613478452, guid: 125a73e799fae5044a4784bc5667de05, type: 3}
+  m_ActionId: c4198c6a-d221-43b0-8fbf-fc7400f94a19
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

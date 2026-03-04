@@ -13,6 +13,9 @@ public class PlayerController : MonoBehaviour
     // butuh inputactionnyanya
     public InputActionReference attackAction; // input attacknya
 
+    // dash actionnya
+    public InputActionReference dashAction;
+
     public PlayerStateMachine playerStateMachine { get; private set; } // statemachinenya
 
     // semua statenya
@@ -20,6 +23,7 @@ public class PlayerController : MonoBehaviour
     public AttackSequence1 attackSequence1;
     public AttackSequence2 attackSequence2;
     public AttackSequence3 attackSequence3;
+    public DashState dashState;
 
     [Header("Debug Only")]
     public TextMeshProUGUI debugComboAttack;
@@ -34,6 +38,7 @@ public class PlayerController : MonoBehaviour
         attackSequence1 = new AttackSequence1(this, playerStateMachine, attackAction);
         attackSequence2 = new AttackSequence2(this, playerStateMachine, attackAction);
         attackSequence3 = new AttackSequence3(this, playerStateMachine, attackAction);
+        dashState = new DashState(this, playerStateMachine);
     }
 
     private void Start()
@@ -57,6 +62,11 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         playerStateMachine.Update();
+
+        if (dashAction != null && dashAction.action != null && dashAction.action.triggered)
+        {
+            playerStateMachine.ChangeState(dashState);
+        }
     }
 
     public IEnumerator MiniDashAttack(float distance, float duration)
