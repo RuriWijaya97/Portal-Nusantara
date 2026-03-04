@@ -1808,6 +1808,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be41ac6746dc8ce42959d9bb5be2900f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerMovement: {fileID: 1901679566}
   attackAction: {fileID: 273737288}
   debugComboAttack: {fileID: 1832723871}
 --- !u!1 &1943703166

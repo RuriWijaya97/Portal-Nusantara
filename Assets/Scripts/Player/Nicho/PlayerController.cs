@@ -65,10 +65,10 @@ public class PlayerController : MonoBehaviour
         playerMovement.CanMove = false;
 
         // cegah null reference
-        if (playerMovement.characterController == null) yield break;
+        if (playerMovement.controller == null) yield break;
 
         // ambil charactercontrollernya
-        CharacterController controller = playerMovement.characterController;
+        CharacterController controller = playerMovement.controller;
 
         // arah gerakannya ke depan
         Vector3 direction = transform.forward;
@@ -77,7 +77,7 @@ public class PlayerController : MonoBehaviour
         direction.Normalize();
 
         // kecepatannya berapa (jarak bagi waktu)
-        float speed = direction / duration;
+        float speed = distance / duration;
 
         // lama waktu telah lewat
         float timeElapsed = 0f;
@@ -92,8 +92,6 @@ public class PlayerController : MonoBehaviour
             timeElapsed += Time.deltaTime;
             yield return null;
         }
-
-        transform.position = targetPos;
 
         playerMovement.CanMove = true;
     }

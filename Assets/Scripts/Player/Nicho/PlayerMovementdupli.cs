@@ -18,11 +18,22 @@ public class PlayerMovementdupli : MonoBehaviour
 
     [SerializeField] private InputActionReference moveAction;
     private CharacterController characterController;
+    public CharacterController controller => characterController;
     private Vector3 moveDirection;
 
     private void Awake()
     {
         characterController = GetComponent<CharacterController>();
+    }
+
+    private void OnEnable()
+    {
+        if (moveAction != null) moveAction.action.Enable();
+    }
+
+    private void OnDisable()
+    {
+        if (moveAction != null) moveAction.action.Disable();
     }
 
     private void Update()
