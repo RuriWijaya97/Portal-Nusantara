@@ -18,6 +18,11 @@ public class IdleState : PlayerState
     {
         Debug.Log("[State] idle entered");
         playerController.debugComboAttack.text = "idle";
+
+        // pastikan attack collidernya nggak aktif pas idle
+        playerController.attackColliderObj1.SetActive(false);
+        playerController.attackColliderObj2.SetActive(false);
+        playerController.attackColliderObj3.SetActive(false);
     }
 
     public override void LogicUpdate()

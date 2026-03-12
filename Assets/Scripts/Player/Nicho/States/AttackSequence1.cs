@@ -8,22 +8,31 @@ public class AttackSequence1 : PlayerState
     // reference ke attack actionnya
     private InputActionReference attackAction;
     // wait time untuk ke attacksequence2
-    private float comboWaitTime = 0.4f;
+    private float comboWaitTime;
 
     // seberapa jauh dia ngedash
-    private float dashDistance = 1.2f;
-    private float dashDuration = 0.15f;
+    private float dashDistance;
+    private float dashDuration;
 
     // contructornya
     public AttackSequence1(PlayerController playerController, PlayerStateMachine playerStateMachine, InputActionReference attackAction) : base(playerController, playerStateMachine)
     {
         this.attackAction = attackAction;
+        this.comboWaitTime = GameManager.instance.waitTimeAttackSequence1;
+        this.dashDistance = GameManager.instance.dashDistanceAttackSequence1;
+        this.dashDuration = GameManager.instance.dashDurationAttackSequence1;
     }
 
     public override void Enter()
     {
         Debug.Log("[State] attack1 entered");
+
         playerController.debugComboAttack.text = "attack1";
+        playerController.CanDash = false;
+
+        // nyalain collidernya
+        playerController.attackColliderObj1.SetActive(true);
+
         playerController.StartCoroutine(ComboCoroutine());
     }
 
@@ -64,5 +73,9 @@ public class AttackSequence1 : PlayerState
     public override void Exit()
     {
         Debug.Log("[State] attack1 exited");
+        playerController.CanDash = true;
+
+        // matiin lagi collidernya
+        playerController.attackColliderObj1.SetActive(false);
     }
 }

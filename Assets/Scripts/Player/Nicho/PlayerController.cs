@@ -18,6 +18,19 @@ public class PlayerController : MonoBehaviour
 
     public PlayerStateMachine playerStateMachine { get; private set; } // statemachinenya
 
+    // bisa dash nggak
+    private bool canDash = true;
+    public bool CanDash
+    {
+        get { return canDash; }
+        set { canDash = value; }
+    }
+
+    // reference ke collidernya
+    public GameObject attackColliderObj1;
+    public GameObject attackColliderObj2;
+    public GameObject attackColliderObj3;
+
     // semua statenya
     public IdleState idleState;
     public AttackSequence1 attackSequence1;
@@ -63,7 +76,7 @@ public class PlayerController : MonoBehaviour
     {
         playerStateMachine.Update();
 
-        if (dashAction != null && dashAction.action != null && dashAction.action.triggered)
+        if (canDash && dashAction != null && dashAction.action != null && dashAction.action.triggered)
         {
             playerStateMachine.ChangeState(dashState);
         }
